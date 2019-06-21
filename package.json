@@ -2,7 +2,6 @@
   "scripts": {
     "dev": "nodemon server.js"
   },
-
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
@@ -11,6 +10,11 @@
     "nodemon": "^1.19.1",
     "package-lock.json": "^1.0.0",
     "require-dir": "^1.2.0"
-  }
+  },
+  "name": "ServerCartNote",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/isadoraBnunes/ServerCartNote.git",
+  "author": "willian <willian.lourenco@novaandradina.org>",
+  "license": "MIT"
 }
-
