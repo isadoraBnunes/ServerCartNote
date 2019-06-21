@@ -7,6 +7,7 @@ const app = express();
 app.use(express.json());
 app.use(cors()) 
 
+
 mongoose
   .connect(
     'mongodb+srv://isadora:cartnote@cluster0-kcs6o.mongodb.net/test?retryWrites=true&w=majority',
@@ -17,7 +18,6 @@ mongoose
   .catch(err => console.log(err));
 
 requireDir('./src/models');
-
 app.use('/api', require('./src/routes.js'));
 
 app.listen(3000);
