@@ -4,8 +4,8 @@ const User = mongoose.model('User');
 
 module.exports = {
     async store(req, res) {
-    const User = await User.create(req.body);
+    const user = await User.create(req.body);
     
-    return res.json(User);
+    return res.json(user);
   }
 };

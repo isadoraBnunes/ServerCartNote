@@ -3,7 +3,7 @@ const routes = express.Router();
 
 const User = require('./controllers/User');
 const Product = require('./controllers/Product');
-const ProductList = require('./controllers/ProductList');
+const ProductsList = require('./controllers/ProductsList');
 
 routes.get('/products', Product.index);
 routes.get('/products/:id', Product.show);
@@ -11,11 +11,11 @@ routes.post('/products', Product.store)
 routes.put('/products/:id', Product.update);
 routes.delete('/products/:id', Product.destroy);
 
-routes.get('/productsList', ProductList.index);
-routes.get('/productsList/:id', ProductList.show);
-routes.post('/productsList/', ProductList.store);
-routes.put('/productsList/:id', ProductList.update);
-routes.delete('/productsList/:id', ProductList.destroy);
+routes.get('/productsList', ProductsList.index);
+routes.get('/productsList/:id', ProductsList.show);
+routes.post('/productsList/', ProductsList.store);
+routes.put('/productsList/:id', ProductsList.update);
+routes.delete('/productsList/:id', ProductsList.destroy);
 
 routes.get('/user/:id', User.store);
 
