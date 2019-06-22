@@ -1,12 +1,12 @@
-const mongoose = require('mongoose');
-const ProductsLists = require('./ProductsList')
+const mongoose = require('mongoose')
+const ProductsList = mongoose.model('ProductsList')
 
-const UserSchema = new mongoose.Schema({
+const UserSchema = mongoose.Schema({
     id: { type: Number, required: true },
     name: { type: String, required: true },
     password: { type: String, required: true },
     email: { type: Number, required: true },
-    productLists: [ProductsLists]
+    productLists: [ProductsList.schema]
 });
 
-mongoose.model('ProductsList', UserSchema);
+mongoose.model('User', UserSchema);
