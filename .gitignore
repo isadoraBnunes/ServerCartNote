@@ -1,2 +1,6 @@
+# Dependency directories
 node_modules/
-yarn-error.log
+
+# Logs
+yarn-debug.log*
+yarn-error.log*
