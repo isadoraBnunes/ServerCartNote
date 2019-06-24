@@ -17,6 +17,6 @@ routes.post('/productsList/', ProductsList.store);
 routes.put('/productsList/:id', ProductsList.update);
 routes.delete('/productsList/:id', ProductsList.destroy);
 
-routes.get('/user/:id', User.store);
+routes.post('/user/:id', User.store);
 
 module.exports = routes;
