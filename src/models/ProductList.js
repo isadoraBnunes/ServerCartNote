@@ -22,7 +22,7 @@ const ProductListSchema = new mongoose.Schema({
 ProductListSchema.methods.getTotalValue = function () {
     this.totalValue = 0
     this.children.array.forEach(child => {
-        this.totalValue += child.value
+        this.totalValue += child.value*child.quantity
     });
 }
 

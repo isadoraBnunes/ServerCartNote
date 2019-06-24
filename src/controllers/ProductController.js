@@ -6,7 +6,7 @@ module.exports = {
   async index(req, res) {
     const { page = 1 } = req.query;
     const productList = ProductList.findByIdAndUpdate(req.body.id)
-    const products = await productList.products.paginate({}, { page, limit: 100 });
+    const products = await productList.products.paginate({}, { page, limit: 10 });
 
     return res.json(products);
   },
@@ -17,7 +17,7 @@ module.exports = {
     return res.json(product);
   },
 
-  async store(req, res) {
+  async store(req, res) {//ok
     const product = await Product.create(req.body.product)
     const productList = await ProductList.findByIdAndUpdate(req.body.id,//parent().id 
       {$push: {products:product}}, {new: true}) 
