@@ -1,21 +1,21 @@
 const express = require('express');
 const routes = express.Router();
 
-const User = require('./controllers/User');
-const Product = require('./controllers/Product');
-const ProductsList = require('./controllers/ProductsList');
+const User = require('./controllers/UserController');
+const Product = require('./controllers/ProductController');
+const ProductList = require('./controllers/ProductListController');
 
-routes.get('/products', Product.index);
-routes.get('/products/:id', Product.show);
-routes.post('/products', Product.store)
-routes.put('/products/:id', Product.update);
-routes.delete('/products/:id', Product.destroy);
+routes.get('/product', Product.index);
+routes.get('/product/:id', Product.show);
+routes.post('/product', Product.store)
+routes.put('/product/:id', Product.update);
+routes.delete('/product/:id', Product.destroy);
 
-routes.get('/productsList', ProductsList.index);
-routes.get('/productsList/:id', ProductsList.show);
-routes.post('/productsList/', ProductsList.store);
-routes.put('/productsList/:id', ProductsList.update);
-routes.delete('/productsList/:id', ProductsList.destroy);
+routes.get('/productList', ProductList.index);
+routes.get('/productList/:id', ProductList.show);
+routes.post('/productList/', ProductList.store);
+routes.put('/productList/:id', ProductList.update);
+routes.delete('/productList/:id', ProductList.destroy);
 
 routes.post('/user/:id', User.store);
 
