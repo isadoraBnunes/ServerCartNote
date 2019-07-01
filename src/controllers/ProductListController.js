@@ -7,7 +7,7 @@ const authMiddleware = require("../middlewares/auth");
 router.use(authMiddleware);
 module.exports = {
 	async index(req, res) {
-		console.log(req);
+		console.log(req.userId);
 		const { page = 1 } = req.query;
 		const productLists = await ProductList.paginate({}, { page, limit: 10 });
 		return res.json(productLists);
