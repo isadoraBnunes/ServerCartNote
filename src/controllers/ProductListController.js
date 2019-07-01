@@ -7,7 +7,6 @@ const authMiddleware = require("../middlewares/auth");
 router.use(authMiddleware);
 module.exports = {
 	async index(req, res) {
-		console.log(req.userId);
 		const { page = 1 } = req.query;
 		const productLists = await ProductList.paginate({}, { page, limit: 10 });
 		return res.json(productLists);
@@ -21,8 +20,11 @@ module.exports = {
 	async store(req, res) {
 		//fix with auth
 		try {
-			console.log(req.header.json);
-			const productList = await ProductList.create(req.body);
+			const { name } = req.body;
+			const productList = await ProductList.create({
+				name: name,
+				user: req.userId
+			});
 			productList.save();
 			return res.json(productList);
 		} catch (error) {
