@@ -5,6 +5,7 @@ const Product = require("./controllers/ProductController");
 const AuthController = require("./controllers/authController");
 const ProductList = require("./controllers/ProductListController");
 
+const middleware = require("./middlewares/auth");
 routes.get("/product", Product.index);
 routes.get("/product/:id", Product.show);
 routes.post("/product", Product.store);
@@ -19,5 +20,6 @@ routes.delete("/productList/:id", ProductList.destroy);
 
 routes.post("/register", AuthController.register);
 routes.post("/authenticate", AuthController.authenticate);
+routes.use(middleware);
 
 module.exports = routes;
